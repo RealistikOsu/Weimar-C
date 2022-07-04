@@ -22,4 +22,11 @@ void read_int64(int64_t *value, uint8_t** buffer);
 // Reads a float from the buffer, incrementing the buffer pointer.
 void read_float(float *value, uint8_t** buffer);
 
+// Reads an unsigned LEB128 integer from the buffer, incrementing the buffer pointer.
+void read_uleb128(uint32_t *value, uint8_t** buffer);
+
+// Reads an ULEB128 prefixed string from the buffer, incrementing the buffer pointer.
+// Returns the pointer to the string. Has to be manually freed.
+char* read_string(uint8_t** buffer);
+
 #endif // WEIMAR_READER_H
