@@ -1,5 +1,5 @@
-#ifndef WEIMAR_PACKETS_H
-#define WEIMAR_PACKETS_H
+#ifndef WEIMAR_READER_H
+#define WEIMAR_READER_H
 
 #include <stdint.h>
 
@@ -22,4 +22,4 @@ void read_int64(int64_t *value, uint8_t** buffer);
 // Reads a float from the buffer, incrementing the buffer pointer.
 void read_float(float *value, uint8_t** buffer);
 
-#endif WEIMAR_PACKETS_H
+#endif // WEIMAR_READER_H
