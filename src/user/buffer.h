@@ -3,10 +3,10 @@
 
 #include <stdint.h>
 
-struct UserBuffer {
+typedef struct {
     uint8_t* data;
     uint8_t* start;
-};
+} UserBuffer;
 
 // Creates a new heap allocated buffer of the default size.
 UserBuffer* create_buffer();
