@@ -6,10 +6,10 @@
 #include "../constants/mode.h" // Not sure if I should be including this here
 
 // A 2D position vector.
-struct Position {
+typedef struct {
     float x;
     float y;
-};
+} Position;
 
 // A structure representing user stats. All types (unless specified)
 // correspond to types used in packets.
@@ -28,7 +28,7 @@ typedef struct {
     uint16_t id;
     char* name; // Possibly specify a max length.
     char* safe_name;
-    char* password_bcrypt;
+    char password_bcrypt[61]; // All bcrypt hashes are 60 characters long. +1 for null terminator.
     Stats stats[MODE_AP_STD + 1];
 
     // Live state
@@ -47,6 +47,9 @@ typedef struct {
 
 // Creates an example user for testing purposes.
 User* user_create_test(char* name);
+
+// Frees all memory associated with the user.
+void free_user(User* user);
 
 // Sets the user action, freeing the previous values.
 void set_action(
