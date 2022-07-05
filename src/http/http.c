@@ -1,0 +1,1 @@
+// A really cursed HTTP server made specifically for a bancho. It will not support anything else.

@@ -10,8 +10,9 @@ UserBuffer* create_buffer() {
 }
 
 void empty_buffer(UserBuffer* buffer) {
-    // we are writing over the old data.
-    buffer-> data = buffer-> start;
+    buffer->data = buffer->start;
+    // Zero out the old data
+    memset(buffer->data, 0, BUFFER_SIZE);
 }
 
 void free_buffer(UserBuffer* buffer) {

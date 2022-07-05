@@ -33,7 +33,7 @@ typedef struct {
 
     // Live state
     uint8_t country;
-    char* uuid; // Possibly also specify max len as we have control over this
+    char uuid[17]; // RealistikThinking moment: Do we need the null terminator since we know the len?
     UserBuffer* buffer;
     Position position;
 
@@ -61,5 +61,7 @@ void set_action(
     uint32_t action_mods
 );
 
+// Writes a 16 char (+ null terminator) to a character buffer.
+void generate_uuid(char* uuid);
 
 #endif // WEIMAR_USER_H
