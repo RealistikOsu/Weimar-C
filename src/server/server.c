@@ -1,9 +1,10 @@
 #include "server.h"
+#include "../utils/macros.h"
 
 Server* server;
 
 Server* server_init() {
-    server = malloc(sizeof(Server));
+    server = HEAP_ALLOC(Server);
 }
 
 Server* server_get() {

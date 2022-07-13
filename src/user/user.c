@@ -1,4 +1,5 @@
 #include "user.h"
+#include "../utils/macros.h"
 
 void free_user(User* user) {
     free_buffer(user->buffer);
@@ -13,7 +14,7 @@ void free_user(User* user) {
 }
 
 User* allocate_user() {
-    User* user = malloc(sizeof(User));
+    User* user = HEAP_ALLOC(User);
     user->buffer = create_buffer();
     //user->uuid = malloc();
     //user->name = malloc();
