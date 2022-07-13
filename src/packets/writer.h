@@ -12,4 +12,7 @@ void write_int32(int32_t* value, uint8_t** buffer);
 void write_int64(int64_t* value, uint8_t** buffer);
 void write_float(float* value, uint8_t** buffer);
 
+void write_uleb128(uint32_t* value, uint8_t** buffer);
+void write_string(char* value, uint8_t** buffer);
+
 #endif // WEIMAR_WRITER_H

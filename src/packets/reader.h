@@ -10,7 +10,7 @@ void read_uleb128(uint32_t *value, uint8_t** buffer);
 // Returns the pointer to the string. Has to be manually freed.
 char* read_string(uint8_t** buffer);
 
-// Macro based reader
+// Macro based primitive reader
 #define PREAD_NEW(identifier, type, buffer) \
     type identifier; \
     memcpy(&identifier, buffer, sizeof(type)); \
